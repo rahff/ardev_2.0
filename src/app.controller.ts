@@ -9,6 +9,6 @@ export class AppController {
   @Get()
   @Render('index')
   root() {
-    return { message: 'Hello world in MVC !' };
+    return { message: 'Hello world in MVC' };
   }
 }
