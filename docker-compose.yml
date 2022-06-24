@@ -1,0 +1,48 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: DockerFile
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - 3000:3000
+  cms:
+    build:
+      context: ./cms/
+      dockerfile: DockerFile
+    volumes:
+    - type: bind
+      source: ./cms/
+      target: /opt/app
+    - ./cms/config:/opt/app/config
+    - ./cms/src:/opt/app/src
+    - ./cms/package.json:/opt/package.json
+    - ./cms/package-lock.json:/opt/package-lock.json
+    - ./cms/.env:/opt/app/.env
+    ports:
+      - 1337:1337
+    env_file: 
+      - ./cms/.env
+    restart: unless-stopped
+    depends_on:
+      - strapiDB
+
+  strapiDB:
+    image: postgres:12.0-alpine
+    container_name: strapiDB
+    platform: linux/amd64
+    restart: unless-stopped
+    env_file: ./cms/.env
+    volumes:
+      - strapi-data:/var/lib/postgresql/data/ #using a volume
+      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+    ports:
+      - "5432:5432"
+  
+volumes:
+    strapi-data:
+      external: true
+        

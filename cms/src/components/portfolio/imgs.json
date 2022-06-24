@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_portfolio_imgs",
+  "info": {
+    "displayName": "imgs",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_collaborator_social_lists",
+  "info": {
+    "displayName": "social_list",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

@@ -1,9 +1,4 @@
-/**
-* Template Name: Arsha - v4.7.1
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -245,13 +240,17 @@
   /**
    * Animation on scroll
    */
-  window.addEventListener('load', () => {
+  let data;
+  window.addEventListener('load', async () => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
       once: true,
       mirror: false
     });
+    const response = await fetch('/data');
+    data = await response.json()
+    console.log(data);
   });
 
 })()

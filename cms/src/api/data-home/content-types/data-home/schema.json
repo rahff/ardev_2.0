@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "data_homes",
+  "info": {
+    "singularName": "data-home",
+    "pluralName": "data-homes",
+    "displayName": "data_home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collaborators": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collaborator.collaborator"
+    },
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
+    },
+    "portfolio_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio-item.portfolio-item"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    }
+  }
+}
