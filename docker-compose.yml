@@ -2,7 +2,7 @@ services:
   app:
     container_name: nestApp
     build:
-      context: ./app
+      context: .
       dockerfile: DockerFile
     volumes:
       - type: bind
