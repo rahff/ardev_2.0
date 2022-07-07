@@ -11,9 +11,14 @@ export class AppController {
   @Render('index')
   async root() {
     const data = await this.appService.getHomeData();
-    console.log(data);
-    
-    return { title: 'A&R Developpement' };
+
+    return { 
+      title: 'A&R Developpement',
+      collaborators: data.collaborators,
+      services: data.services,
+      partners: data.partners,
+      portfolioItems: data.portfolio_items
+    };
   }
 
   @Get("data")

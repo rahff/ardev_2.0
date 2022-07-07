@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HomeDao } from 'src/dao/home-dao';
 import { AppController } from '../controllers/app.controller';
+import { HomeRepository } from '../dao/home-dao';
 import { AppService } from './app.service';
 
 describe('AppController', () => {
@@ -10,7 +10,7 @@ describe('AppController', () => {
     homeDaoSpy = jasmine.createSpyObj("HomeDao", ["getDataHome"]);
     app = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService, HomeDao],
+      providers: [AppService, HomeRepository],
     }).compile();
     homeDaoSpy.getDataHome.and.returnValue(new Promise((resolve)=> resolve({})))
   });

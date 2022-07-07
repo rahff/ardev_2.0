@@ -2,11 +2,11 @@ services:
   app:
     container_name: nestApp
     build:
-      context: .
+      context: ./app
       dockerfile: DockerFile
     volumes:
       - type: bind
-        source: .
+        source: ./app
         target: /app
     ports:
       - 3000:3000
