@@ -3,7 +3,8 @@ import { StrapiApi } from 'strapi-adapter';
 import { AppController } from './controllers/app.controller';
 import { HomeRepository } from './dao/home-dao';
 import { AppService } from './services/app.service';
-import { environment } from '../environments/environment'
+import { environment } from './environments/environment'
+
 const strapiAdapterFactory = ()=> new StrapiApi(environment.strapiUrl);
 
 @Module({

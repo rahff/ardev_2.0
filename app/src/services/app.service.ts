@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HomeRepository } from 'app/src/dao/home-dao';
+import { HomeRepository } from '../dao/home-dao';
 import { HomeData } from '../entities';
 
 

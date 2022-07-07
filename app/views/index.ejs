@@ -34,19 +34,19 @@
   <%- include('components/get-started'); %>
   <main id="main">
     <!-- ======= Clients Section ======= -->
-    <%- include('components/partner'); %>
+    <%- include('components/partner', {partners: partners, imgBaseUrl}); %>
     <!-- ======= About Us Section ======= -->
     <%- include('components/about'); %>
     <!-- ======= Why Us Section ======= -->
     <%- include('components/why-us'); %>
     <!-- ======= Services Section ======= -->
-    <%- include('components/services'); %>
+    <%- include('components/services', {services: services}); %>
     <!-- ======= Cta Section ======= -->
     <%- include('components/cta'); %>
     <!-- ======= Portfolio Section ======= -->
-    <%- include('components/portfolio'); %>
+    <%- include('components/portfolio', {portfolioItems: portfolioItems, imgBaseUrl}); %>
     <!-- ======= Team Section ======= -->
-    <%- include('components/team'); %>
+    <%- include('components/team', {collaborators: collaborators, imgBaseUrl}); %>
     <!-- ======= Pricing Section ======= -->
     <%- include('components/pricing'); %>
     <!-- ======= Frequently Asked Questions Section ======= -->
