@@ -1,5 +1,6 @@
 services:
   app:
+    container_name: nestApp
     build:
       context: .
       dockerfile: DockerFile
@@ -10,6 +11,7 @@ services:
     ports:
       - 3000:3000
   cms:
+    container_name: strapiApp
     build:
       context: ./cms/
       dockerfile: DockerFile

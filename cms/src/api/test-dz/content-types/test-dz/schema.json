@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "test_dzs",
+  "info": {
+    "singularName": "test-dz",
+    "pluralName": "test-dzs",
+    "displayName": "testDZ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "dz": {
+      "type": "dynamiczone",
+      "components": [
+        "collaborator.social-list",
+        "portfolio.imgs"
+      ]
+    },
+    "collaborators": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collaborator.collaborator"
+    }
+  }
+}

@@ -30,7 +30,8 @@
     "qs": "^6.10.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.4.0"
+    "rxjs": "^7.4.0",
+    "strapi-adapter": "^1.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.2.6",

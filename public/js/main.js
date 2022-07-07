@@ -240,7 +240,7 @@
   /**
    * Animation on scroll
    */
-  let data;
+  
   window.addEventListener('load', async () => {
     AOS.init({
       duration: 1000,
@@ -248,9 +248,6 @@
       once: true,
       mirror: false
     });
-    const response = await fetch('/data');
-    data = await response.json()
-    console.log(data);
   });
 
 })()

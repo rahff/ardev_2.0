@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import fetch from 'node-fetch';
 import { HomeDao } from 'src/dao/home-dao';
-import { Collaborator, HomeData, Partner, PortfolioItem, Service, StrapiAttributeDataHome, StrapiDataHome, StrapiEntity } from '../entities';
+import { StrapiDataHome } from '../entities';
 
 
 @Injectable()
