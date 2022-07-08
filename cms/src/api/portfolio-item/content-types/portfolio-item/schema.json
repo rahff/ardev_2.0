@@ -12,17 +12,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "list_img": {
-      "displayName": "imgs",
-      "type": "component",
-      "repeatable": true,
-      "component": "portfolio.imgs"
-    },
     "title": {
       "type": "string"
     },
     "description": {
       "type": "string"
+    },
+    "list_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

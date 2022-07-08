@@ -16,12 +16,11 @@
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         <%for(item of portfolioItems){%>
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="<%=imgBaseUrl + item.list_img[0].img[0].url%>" class="img-fluid" alt="<%=item.list_img[0].alt%>"></div>
+            <div class="portfolio-img"><img src="<%=imgBaseUrl + item.list_img[0].url%>" class="img-fluid" alt="<%=item.list_img[0].alt%>"></div>
             <div class="portfolio-info">
               <h4><%= item.title%></h4>
               <p><%= item.description%></p>
-              <a href="<%=imgBaseUrl +  item.list_img[0].img[1].url%>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<%=`portfolio-details/${item.id}`%>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
           <%}%>
