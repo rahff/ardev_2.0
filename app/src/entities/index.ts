@@ -50,3 +50,11 @@ export interface Message {
     subject: string;
     message: string;
 }
+
+export interface Quote {
+    client: string;
+    email: string;
+    company: string;
+    domain: string;
+    documents: any;
+}

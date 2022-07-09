@@ -1,12 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { HomeRepository } from '../dao/home-repository';
-import { HomeData, Message } from '../entities';
-
+import { Quote, HomeData, Message } from '../entities';
+import { QuoteRepository } from '../dao/quote-repository';
 
 @Injectable()
 export class AppService {
 
-  constructor(private appRepository: HomeRepository){}
+  constructor(private appRepository: HomeRepository,
+              private QuoteRepository: QuoteRepository){}
 
   async getHomeData(): Promise<HomeData> {
     const body: HomeData = await this.appRepository.getDataHome();
@@ -17,4 +18,9 @@ export class AppService {
     const response = await this.appRepository.postMessage(message);
     return response;
   } 
+
+  async postQuote(Quote: Quote): Promise<Quote> {
+    const response = await this.QuoteRepository.postQuote(Quote);
+    return response;
+  }
 }

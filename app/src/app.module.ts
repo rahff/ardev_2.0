@@ -6,6 +6,7 @@ import { AppService } from './services/app.service';
 import { environment } from './environments/environment'
 import { PortfolioService } from './services/portfolio.service';
 import { PortfolioRepository } from './dao/portfolio-repository';
+import { QuoteRepository } from './dao/quote-repository';
 
 const strapiAdapterFactory = ()=> new StrapiApi(environment.strapiUrl);
 
@@ -17,6 +18,7 @@ const strapiAdapterFactory = ()=> new StrapiApi(environment.strapiUrl);
     HomeRepository,
     PortfolioService,
     PortfolioRepository,
+    QuoteRepository,
     {provide: StrapiApi, useFactory: strapiAdapterFactory}],
 })
 export class AppModule {}

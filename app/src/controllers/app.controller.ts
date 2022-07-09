@@ -1,8 +1,9 @@
-import { Body, Controller, Get, NotFoundException, Param, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Post, Req, Res, UseInterceptors } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { AppService } from '../services/app.service';
 import { environment } from 'src/environments/environment';
 import { PortfolioService } from 'src/services/portfolio.service';
+import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 const strapiImgUrl = environment.strapiUploadPath
 
 @Controller()
@@ -31,9 +32,21 @@ export class AppController {
     return res.render('portfolio-details', {portfolioItem: data, imgBaseUrl: strapiImgUrl})
   }
 
+  @Get('get-strated')
+  getStartedPage(@Res() res: Response){
+    return res.render('inner-page');
+  }
+
   @Post('contact')
   async contact(@Req() req: Request) {
     const message = await this.appService.postMessage(req.body);
     return message;
+  }
+
+  @Post('quote')
+  @UseInterceptors(FilesInterceptor('files.documents'))
+  async postQuote(@Req() req: Request){
+    const quote = await this.appService.postQuote(req.body);
+    return quote;
   }
 }
