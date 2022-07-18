@@ -10,6 +10,7 @@ services:
         target: /app
     ports:
       - 3000:3000
+
   cms:
     container_name: strapiApp
     build:

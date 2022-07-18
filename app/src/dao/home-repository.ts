@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { HomeData, Message } from "../entities";
 import { StrapiApi } from 'strapi-adapter'
-import { IResponse } from "strapi-adapter/lib/api/interfaces/api/interfaces";
+import { IResponse } from "strapi-adapter";
 
 @Injectable()
 export class HomeRepository {

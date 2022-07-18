@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PortfolioItem } from 'src/entities';
+import { PortfolioItem } from '../entities';
 import { StrapiApi } from 'strapi-adapter';
 
 @Injectable()

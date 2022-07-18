@@ -1,16 +1,18 @@
 import { Body, Controller, Get, NotFoundException, Param, Post, Req, Res, UseInterceptors } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { AppService } from '../services/app.service';
-import { environment } from 'src/environments/environment';
-import { PortfolioService } from 'src/services/portfolio.service';
+import { environment } from '../environments/environment';
+import { PortfolioService } from '../services/portfolio.service';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import { CalendarService } from 'src/services/calendar.service';
 const strapiImgUrl = environment.strapiUploadPath
 
 @Controller()
 export class AppController {
   
   constructor(private readonly appService: AppService,
-              private portfolioService: PortfolioService) {}
+              private portfolioService: PortfolioService,
+              private calendarService: CalendarService) {}
 
   @Get()
   async root(@Res() res: Response) {
@@ -35,6 +37,12 @@ export class AppController {
   @Get('get-strated')
   getStartedPage(@Res() res: Response){
     return res.render('inner-page');
+  }
+
+  @Get('rdv-scheduler')
+  async getRdvScheduler(@Res() res: Response){
+    const calendarData = this.calendarService.getCalendar();
+    return res.render('rdv-scheduler', {calendarData: calendarData});
   }
 
   @Post('contact')

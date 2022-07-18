@@ -17,6 +17,10 @@ body {
     color: #47b2e4;
     text-decoration: none;
   }
+
+  .cursor-pointer{
+    cursor: pointer;
+  }
   
   a:hover {
     color: #73c5eb;
@@ -1327,6 +1331,9 @@ body {
     background: #f3f5fa;
     min-height: 40px;
     margin-top: 72px;
+  }
+  .withe {
+    background: #fff !important;
   }
   @media (max-width: 992px) {
     .breadcrumbs {

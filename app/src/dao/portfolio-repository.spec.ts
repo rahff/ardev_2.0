@@ -7,7 +7,7 @@ describe('PortfolioRepositoryService', () => {
   let strapiAdapterSpy = new StrapiApi("")
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [PortfolioRepository, { provide:StrapiApi, useValue: strapiAdapterSpy }],
+      providers: [PortfolioRepository, { provide: StrapiApi, useValue: strapiAdapterSpy }],
     }).compile();
 
     service = module.get<PortfolioRepository>(PortfolioRepository);

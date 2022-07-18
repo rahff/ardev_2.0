@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PortfolioRepository } from 'src/dao/portfolio-repository';
-import { PortfolioItem } from 'src/entities';
+import { PortfolioRepository } from '../dao/portfolio-repository';
+import { PortfolioItem } from '../entities';
 
 @Injectable()
 export class PortfolioService {

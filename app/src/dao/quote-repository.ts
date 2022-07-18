@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { Quote } from "src/entities";
+import { Quote } from "../entities";
 import { StrapiApi } from "strapi-adapter";
 
 @Injectable()

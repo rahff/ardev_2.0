@@ -13,4 +13,8 @@ describe('AppController', () => {
     }).compile();
     homeDaoSpy.getDataHome.and.returnValue(new Promise((resolve)=> resolve({})))
   });
+
+  it('should be define', ()=>{
+    expect(app).toBeDefined();
+  })
 });

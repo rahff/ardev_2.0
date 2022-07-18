@@ -7,8 +7,11 @@ import { environment } from './environments/environment'
 import { PortfolioService } from './services/portfolio.service';
 import { PortfolioRepository } from './dao/portfolio-repository';
 import { QuoteRepository } from './dao/quote-repository';
+import { Calendar } from 'calendos';
+import { CalendarService } from './services/calendar.service';
 
 const strapiAdapterFactory = ()=> new StrapiApi(environment.strapiUrl);
+const calendarFactory = ()=> new Calendar()
 
 @Module({
   imports: [],
@@ -19,6 +22,9 @@ const strapiAdapterFactory = ()=> new StrapiApi(environment.strapiUrl);
     PortfolioService,
     PortfolioRepository,
     QuoteRepository,
-    {provide: StrapiApi, useFactory: strapiAdapterFactory}],
+    CalendarService,
+    {provide: StrapiApi, useFactory: strapiAdapterFactory},
+    {provide: Calendar, useFactory: calendarFactory}
+  ],
 })
 export class AppModule {}
