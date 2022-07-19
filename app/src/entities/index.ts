@@ -1,3 +1,5 @@
+import { Media } from "strapi-adapter/lib/api/interfaces/api/interfaces";
+
 interface SocialLink {
     url: string;
     icon: string;
@@ -24,7 +26,7 @@ export class Service {
 }
 
 export class PortfolioItem {
-    listImg: string[];
+    listImg: Media[];
     title: string;
     description: string;
     
@@ -40,4 +42,19 @@ export interface HomeData {
     partners: Partner[];
     portfolio_items: PortfolioItem[];
     services: Service[]
+}
+
+export interface Message {
+    expName: string;
+    email: string;
+    subject: string;
+    message: string;
+}
+
+export interface Quote {
+    client: string;
+    email: string;
+    company: string;
+    domain: string;
+    documents: any;
 }

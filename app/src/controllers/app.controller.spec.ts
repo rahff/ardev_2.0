@@ -1,6 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from '../services/app.service';
+import { QuoteRepository } from '../dao/quote-repository';
+import { HomeRepository } from 'src/dao/home-repository';
 
 describe('AppController', () => {
   let app: TestingModule;
@@ -8,7 +10,7 @@ describe('AppController', () => {
   beforeAll(async () => {
     app = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [AppService, QuoteRepository, HomeRepository],
     }).compile();
   });
 

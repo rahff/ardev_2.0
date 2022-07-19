@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from '../controllers/app.controller';
-import { HomeRepository } from '../dao/home-dao';
+import { HomeRepository } from '../dao/home-repository';
 import { AppService } from './app.service';
 
 describe('AppController', () => {
@@ -13,4 +13,8 @@ describe('AppController', () => {
     }).compile();
     homeDaoSpy.getDataHome.and.returnValue(new Promise((resolve)=> resolve({})))
   });
+
+  it('should be define', ()=>{
+    expect(app).toBeDefined();
+  })
 });

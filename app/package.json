@@ -14,7 +14,7 @@
     "start:prod": "NODE_ENV=production node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watchAll",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
@@ -25,13 +25,14 @@
     "@nestjs/platform-express": "^8.1.1",
     "@types/node-fetch": "^2.6.2",
     "@types/qs": "^6.9.7",
+    "calendos": "^1.0.5",
     "ejs": "^3.1.8",
     "node-fetch": "^2.6.7",
     "qs": "^6.10.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.4.0",
-    "strapi-adapter": "^1.0.1"
+    "strapi-adapter": "^1.0.3"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.2.6",

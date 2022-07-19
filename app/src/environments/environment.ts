@@ -1,4 +1,4 @@
-import { strapiConfig } from "app/config/strapi.config"
+import { strapiConfig } from "../config/strapi.config"
 
 
 export class Environment {
@@ -12,6 +12,10 @@ export class Environment {
 
     get strapiUrl(){
         return this.isProd ? strapiConfig.url.prod : strapiConfig.url.dev
+    }
+
+    get strapiUploadPath(){
+        return this.isProd ? strapiConfig.uploadPath.prod : strapiConfig.uploadPath.dev
     }
 }
 

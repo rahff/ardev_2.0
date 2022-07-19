@@ -14,7 +14,7 @@
   <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="/vendor/aos/aos.css" rel="stylesheet">
@@ -34,26 +34,26 @@
   <%- include('components/get-started'); %>
   <main id="main">
     <!-- ======= Clients Section ======= -->
-    <%- include('components/partner'); %>
+    <%- include('components/partner', {partners: partners, imgBaseUrl}); %>
     <!-- ======= About Us Section ======= -->
     <%- include('components/about'); %>
     <!-- ======= Why Us Section ======= -->
     <%- include('components/why-us'); %>
     <!-- ======= Services Section ======= -->
-    <%- include('components/services'); %>
+    <%- include('components/services', {services: services}); %>
     <!-- ======= Cta Section ======= -->
     <%- include('components/cta'); %>
     <!-- ======= Portfolio Section ======= -->
-    <%- include('components/portfolio'); %>
+    <%- include('components/portfolio', {portfolioItems: portfolioItems, imgBaseUrl}); %>
     <!-- ======= Team Section ======= -->
-    <%- include('components/team'); %>
+    <%- include('components/team', {collaborators: collaborators, imgBaseUrl}); %>
     <!-- ======= Pricing Section ======= -->
     <%- include('components/pricing'); %>
     <!-- ======= Frequently Asked Questions Section ======= -->
     <%- include('components/faq'); %>
     <!-- ======= Contact Section ======= -->
     <%- include('components/contact'); %>
-  </main>
+  </main>any
 
   <!-- ======= Footer ======= -->
   <%- include('components/footer'); %>
@@ -68,7 +68,7 @@
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/vendor/php-email-form/validate.js"></script>
+  <script src="/vendor/email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="/js/main.js"></script>
