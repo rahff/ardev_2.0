@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class CalendarManager {
     currentMounth;
     currentYear;
@@ -63,3 +64,10 @@ window.addEventListener('load', ()=> {
     const calendarContainer = document.querySelector("#calendarContainer");
     const calendarManager = new CalendarManager(calendarContainer);
 })
+=======
+(function(){
+
+    const calendarContainer = document.querySelector('#calendarContainer');
+    const arrowNext = document.querySelector('')
+})()
+>>>>>>> 2bfbca0f1acfba7105e80d07575e743a281ce942
